@@ -16,6 +16,13 @@ const SmDiv = styled.div`
   }
 `
 
+const Buttons = styled.div`
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 
 
 const CameraFeed = () => {
@@ -63,15 +70,28 @@ const CameraFeed = () => {
     context.drawImage(videoPlayer.current, 0, 0, canvas.current.width, canvas.current.height)
   }
 
+  const savePhoto = () => {
+  canvas.current.toBlob(
+    blob => {
+      const anchor = document.createElement('a')
+      anchor.download = 'my-file-name.jpg'
+      anchor.href = URL.createObjectURL(blob)
+      anchor.click()
+      URL.revokeObjectURL(anchor.href)
+    },
+    'image/jpeg',
+    0.9,
+  )
+}
+
   return (
     <Fragment>
         <Navbar bg="dark" variant="dark">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
-            <Button variant='dark' className='mr-2' onClick={() => turnCameraOn()}>Turn on Camera</Button>
-            <Button variant='dark' className='mr-2' onClick={() => turnCameraOff()}>Turn off Camera</Button>
-            <Button variant='dark' onClick={() => takePhoto()}>Take photo!</Button>
+              <Button variant='dark' className='mr-2' onClick={() => turnCameraOn()}>Turn on Camera</Button>
+              <Button variant='dark' className='mr-2' onClick={() => turnCameraOff()}>Turn off Camera</Button>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -83,6 +103,10 @@ const CameraFeed = () => {
           <canvas className='canvas' width="1020" height="575" ref={canvas} />
         </SmDiv>
       </div>
+      <Buttons>
+        <Button variant='dark' onClick={() => takePhoto()}>Take photo!</Button>
+        <Button onClick={(e) => savePhoto(e)}>Save photo!</Button>
+      </Buttons>
     </Fragment>
   )
 }
