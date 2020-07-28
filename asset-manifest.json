@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/selfie-mirror/static/css/main.5243e8a8.chunk.css",
-    "main.js": "/selfie-mirror/static/js/main.de58a748.chunk.js",
-    "main.js.map": "/selfie-mirror/static/js/main.de58a748.chunk.js.map",
+    "main.js": "/selfie-mirror/static/js/main.1a68685b.chunk.js",
+    "main.js.map": "/selfie-mirror/static/js/main.1a68685b.chunk.js.map",
     "runtime-main.js": "/selfie-mirror/static/js/runtime-main.c0fa1af9.js",
     "runtime-main.js.map": "/selfie-mirror/static/js/runtime-main.c0fa1af9.js.map",
-    "static/js/2.3aacac04.chunk.js": "/selfie-mirror/static/js/2.3aacac04.chunk.js",
-    "static/js/2.3aacac04.chunk.js.map": "/selfie-mirror/static/js/2.3aacac04.chunk.js.map",
+    "static/js/2.c7d0de5b.chunk.js": "/selfie-mirror/static/js/2.c7d0de5b.chunk.js",
+    "static/js/2.c7d0de5b.chunk.js.map": "/selfie-mirror/static/js/2.c7d0de5b.chunk.js.map",
     "index.html": "/selfie-mirror/index.html",
-    "precache-manifest.726d075d3349245560edb6d21bbd82fe.js": "/selfie-mirror/precache-manifest.726d075d3349245560edb6d21bbd82fe.js",
+    "precache-manifest.831a1f1a84a9e235bed504db7811e2a0.js": "/selfie-mirror/precache-manifest.831a1f1a84a9e235bed504db7811e2a0.js",
     "service-worker.js": "/selfie-mirror/service-worker.js",
     "static/css/main.5243e8a8.chunk.css.map": "/selfie-mirror/static/css/main.5243e8a8.chunk.css.map",
-    "static/js/2.3aacac04.chunk.js.LICENSE.txt": "/selfie-mirror/static/js/2.3aacac04.chunk.js.LICENSE.txt"
+    "static/js/2.c7d0de5b.chunk.js.LICENSE.txt": "/selfie-mirror/static/js/2.c7d0de5b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c0fa1af9.js",
-    "static/js/2.3aacac04.chunk.js",
+    "static/js/2.c7d0de5b.chunk.js",
     "static/css/main.5243e8a8.chunk.css",
-    "static/js/main.de58a748.chunk.js"
+    "static/js/main.1a68685b.chunk.js"
   ]
 }
