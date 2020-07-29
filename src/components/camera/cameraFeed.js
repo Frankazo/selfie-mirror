@@ -17,15 +17,20 @@ const SmDiv = styled.div`
 `
 
 const Buttons = styled.div`
-  height: 20vh;
+  margin: 50px 500px 0 500px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 `
 
+const MyButton = styled(Button)`
+  width: 120px;
+  height: 50px;
+`
 
 
 const CameraFeed = () => {
+  const [filter, setFilter] = useState(null)
   const videoPlayer = useRef(null)
   const canvas = useRef(null)
 
@@ -100,12 +105,18 @@ const CameraFeed = () => {
           <video ref={videoPlayer} width="1020"/>
         </LgDiv>
         <SmDiv className="col-lg-4">
-          <canvas className='canvas' width="1020" height="575" ref={canvas} />
+          <canvas className='canvas' style={{filter: filter}} width="1020" height="575" ref={canvas} />
         </SmDiv>
       </div>
       <Buttons>
-        <Button variant='dark' onClick={() => takePhoto()}>Take photo!</Button>
-        <Button onClick={(e) => savePhoto(e)}>Save photo!</Button>
+        <MyButton variant='dark' onClick={() => takePhoto()}>Take photo!</MyButton>
+        <MyButton variant='info' onClick={() => setFilter(null)}>Normal</MyButton>
+        <MyButton variant='info' onClick={() => setFilter("grayscale(1)")}>Greyscale</MyButton>
+        <MyButton variant='info' onClick={() => setFilter("sepia(1)")}>Sepia</MyButton>
+        <MyButton variant='info' onClick={() => setFilter("saturate(8)")}>Saturate</MyButton>
+        <MyButton variant='info' onClick={() => setFilter("saturate(1.5) contrast(1.3) blur(0.2px) brightness(1.1)")}>Lomo</MyButton>
+        <MyButton variant='info' onClick={() => setFilter("blur(5px) opacity(0.6)")}>blur</MyButton>
+        <MyButton onClick={(e) => savePhoto(e)}>Save photo!</MyButton>
       </Buttons>
     </Fragment>
   )
